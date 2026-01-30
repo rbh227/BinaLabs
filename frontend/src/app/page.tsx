@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import ImageComparisonSlider from "@/components/ImageComparisonSlider";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+const API_URL = "/api";
 
 // ── Class palette ───────────────────────────────────────────────────────────
 const CLASSES = [
