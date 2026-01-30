@@ -370,11 +370,7 @@ function StepExplainer() {
           <div className="w-full aspect-[16/9] rounded-xl overflow-hidden border border-[#1E2028]">
             <img src={current.image} alt={current.title} className="w-full h-full object-cover" />
           </div>
-        ) : (
-          <div className="w-full aspect-[16/9] bg-[#0A0B0F] border border-dashed border-[#2a2d35] rounded-xl flex items-center justify-center">
-            <p className="text-xs text-gray-600 text-center px-8">{"placeholder" in current ? current.placeholder : ""}</p>
-          </div>
-        )}
+        ) : null}
       </motion.div>
 
       {/* Nav arrows */}
@@ -459,9 +455,10 @@ export default function LearnPage() {
       {/* ════════ HERO ════════ */}
       <section className="max-w-5xl mx-auto px-6 pt-12 pb-16 text-center">
         <FadeIn>
-          <p className="text-xs font-semibold tracking-[0.25em] uppercase text-[#4E3629] mb-4">
-            Bina Labs &middot; Lehigh University
-          </p>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <img src="/bina-logo.png" alt="Bina Labs" className="h-16 object-contain" />
+            <span className="text-sm font-semibold tracking-wide text-gray-300">Lehigh University</span>
+          </div>
         </FadeIn>
         <FadeIn delay={0.1}>
           <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-[#2D7DD2] to-[#A0D2FF] bg-clip-text text-transparent leading-tight">

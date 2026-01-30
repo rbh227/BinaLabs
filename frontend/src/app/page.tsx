@@ -206,9 +206,10 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#2D7DD2]/8 via-transparent to-transparent" />
         <div className="relative max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
           <FadeIn>
-            <p className="text-xs font-semibold tracking-[0.25em] uppercase text-[#4E3629] mb-4">
-              Bina Labs &middot; Lehigh University
-            </p>
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <img src="/bina-logo.png" alt="Bina Labs" className="h-16 object-contain" />
+              <span className="text-sm font-semibold tracking-wide text-gray-300">Lehigh University</span>
+            </div>
           </FadeIn>
           <FadeIn delay={0.1}>
             <h1 className="text-5xl sm:text-6xl font-bold bg-gradient-to-r from-[#2D7DD2] to-[#A0D2FF] bg-clip-text text-transparent leading-tight">
