@@ -19,7 +19,7 @@ from api.inference import load_model, predict, CLASS_NAMES, PALETTE_RGB
 
 MODEL_PATH = os.environ.get(
     "MODEL_PATH",
-    "/working/runs/rescuenet_final_b4_ohem_cosine_V2/BEST_MODELS_ARCHIVE/checkpoint-mIoU-0.7461-Ep255.0",
+    "/media/BinaLabs/runs/checkpoint-mIoU-0.7461-Ep255.0",
 )
 
 app = FastAPI(title="DA-SegFormer API")
