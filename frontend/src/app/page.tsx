@@ -14,6 +14,7 @@ import {
   ChevronDown,
   ExternalLink,
   BookOpen,
+  Download,
 } from "lucide-react";
 import ImageComparisonSlider from "@/components/ImageComparisonSlider";
 
@@ -321,6 +322,23 @@ export default function Home() {
               <p className="text-xs text-gray-600 mt-2">
                 JPG, PNG, or TIF &middot; High-resolution post-disaster imagery
               </p>
+            </div>
+
+            {/* Sample Data */}
+            <div className="mt-4 p-4 bg-[#0D0E12] border border-[#1E2028] rounded-xl">
+              <h4 className="text-sm font-medium text-white mb-2">Sample Data</h4>
+              <p className="text-xs text-gray-500 mb-3">
+                Don&apos;t have an image? Download sample post-disaster aerial imagery from the RescueNet dataset:
+              </p>
+              <a
+                href="https://www.kaggle.com/datasets/yaroslavchyrko/rescuenet"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs text-[#2D7DD2] hover:text-[#A0D2FF] transition-colors"
+              >
+                <Download className="w-3.5 h-3.5" />
+                RescueNet Dataset on Kaggle
+              </a>
             </div>
 
             {/* Legend */}
