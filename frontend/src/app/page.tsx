@@ -156,8 +156,28 @@ export default function Home() {
 
     setLoading(true);
     try {
+      // Resize large images client-side to stay under Vercel's 4.5MB body limit
+      const img = new window.Image();
+      img.src = objectUrl;
+      await new Promise((resolve) => { img.onload = resolve; });
+
+      const MAX_DIM = 2048;
+      let { width, height } = img;
+      if (width > MAX_DIM || height > MAX_DIM) {
+        const scale = MAX_DIM / Math.max(width, height);
+        width = Math.round(width * scale);
+        height = Math.round(height * scale);
+      }
+      const canvas = document.createElement("canvas");
+      canvas.width = width;
+      canvas.height = height;
+      canvas.getContext("2d")!.drawImage(img, 0, 0, width, height);
+      const blob = await new Promise<Blob>((resolve) =>
+        canvas.toBlob((b) => resolve(b!), "image/jpeg", 0.85)
+      );
+
       const formData = new FormData();
-      formData.append("file", f);
+      formData.append("file", blob, "image.jpg");
       const res = await fetch(`${API_URL}/predict`, {
         method: "POST",
         body: formData,
