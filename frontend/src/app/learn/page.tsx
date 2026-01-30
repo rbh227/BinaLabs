@@ -310,7 +310,7 @@ function StepExplainer() {
         "The lightweight All-MLP decoder takes features from all 4 encoder stages, unifies their channel dimensions, upsamples them to 1/4 resolution, and concatenates them. A final prediction layer assigns one of 10 classes to every pixel.",
       detail:
         "This is where the model decides: is this pixel a damaged building? A road? Water? Each pixel gets a probability distribution across all 10 classes.",
-      placeholder: "IMAGE: Show the decoder fusing multi-scale features into a segmentation map",
+
     },
     {
       title: "5. Stitch & Output",
@@ -319,7 +319,7 @@ function StepExplainer() {
         "All patch predictions are stitched back together using smooth averaging in the overlap zones. The result is a full-resolution segmentation mask where every pixel is color-coded by class.",
       detail:
         "The final output enables responders to see exactly which buildings are damaged and to what degree — information that would take days to gather manually.",
-      placeholder: "IMAGE: Show the final stitched segmentation mask overlaid on the original",
+
     },
   ];
 
@@ -777,12 +777,6 @@ export default function LearnPage() {
                 This forces the model to focus on the decision boundaries it&apos;s getting wrong —
                 typically the edges between Minor and Major damage.
               </p>
-              <div className="mt-3 w-full aspect-[16/7] bg-[#0A0B0F] border border-dashed border-[#2a2d35] rounded-xl flex items-center justify-center">
-                <p className="text-xs text-gray-600 text-center px-8">
-                  IMAGE: Visualization showing pixel-level loss heatmap — bright where the model struggles
-                  (damage boundaries), dark where it&apos;s confident (background)
-                </p>
-              </div>
             </Expandable>
           </FadeIn>
 
